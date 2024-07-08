@@ -25,7 +25,7 @@ export default class ErrorRepository {
    * readable string, if such error exists in the class.
    *
    * @param {Number} code  - error code
-   * @returns {String} - human-readable textual description of the error
+   * @returns {String}     - human-readable textual description of the error
    */
   translate(code) {
     if (typeof code !== "number") {
