@@ -8,7 +8,6 @@ export default function getAttackModes(character) {
   const attackModes = [];
 
   const allSpecials = [...character.special];
-  console.log(allSpecials);
 
   for (const obj of allSpecials) {
     const id = obj?.id;
@@ -21,9 +20,7 @@ export default function getAttackModes(character) {
       if (!description) description = "Description is not available yet";
       attackModes.push({ id, name, icon, description });
     }
-    console.log(obj);
   }
-  console.log(attackModes);
 
   return attackModes;
 }
