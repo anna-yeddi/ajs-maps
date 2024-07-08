@@ -45,7 +45,7 @@ describe("Settings", () => {
 
       prefs.setUserPref("theme", "high-contrast");
 
-      expect(prefs.user.get("theme")).toBe("high-contrast");
+      expect(prefs.user).toEqual(expectedHCM);
       expect(prefs.default.get("theme")).toBe("dark");
     });
 
@@ -75,7 +75,7 @@ describe("Settings", () => {
   });
 
   describe("get()", () => {
-    it("returns a Map with the full set of user prefs (default and customized)", () => {
+    it("returns a Map with the full set of user prefs: theme", () => {
       const prefs = new Settings();
       const defaultPrefs = new Map([
         ["theme", "dark"],
@@ -94,7 +94,7 @@ describe("Settings", () => {
       expect(prefs.get()).toEqual(customThemePrefs);
     });
 
-    it("returns a Map with the full set of user prefs (default and customized)", () => {
+    it("returns a Map with the full set of user prefs: music", () => {
       const prefs = new Settings();
       const defaultPrefs = new Map([
         ["theme", "dark"],
@@ -113,7 +113,7 @@ describe("Settings", () => {
       expect(prefs.get()).toEqual(customMusicPrefs);
     });
 
-    it("returns a Map with the full set of user prefs (default and customized)", () => {
+    it("returns a Map with the full set of user prefs: difficulty", () => {
       const prefs = new Settings();
       const defaultPrefs = new Map([
         ["theme", "dark"],
