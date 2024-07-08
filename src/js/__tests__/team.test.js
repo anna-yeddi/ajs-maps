@@ -43,23 +43,24 @@ describe("Team class", () => {
 
     it("can add only unique members to the team", () => {
       const team = new Team();
+      const errorText = "This character is already a part of the team.";
 
       expect(team.members.size).toBe(0);
 
       team.add(wizard);
-      expect(() => team.add(wizard)).toThrow(
-        "This character is already a part of the team."
-      );
+      expect(() => team.add(wizard)).toThrow(errorText);
 
       expect(team.members.size).toBe(1);
       expect(team).toEqual(smallTeam);
 
       team.add(bowman);
+      expect(() => team.add(bowman)).toThrow(new Error(errorText));
+
       team.add(bowperson);
+      expect(() => team.add(bowperson)).toThrow(new Error(errorText));
+
       team.add(zombie);
-      expect(() => team.add(bowman).toThrow(new Error()));
-      expect(() => team.add(bowperson).toThrow(new Error()));
-      expect(() => team.add(zombie).toThrow(new Error()));
+      expect(() => team.add(zombie)).toThrow(new Error(errorText));
 
       expect(team.members.size).toBe(4);
       expect(team).toEqual(fullTeam);
