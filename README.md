@@ -1,3 +1,3 @@
-# AJS-Containers
+# AJS-Containers-Maps
 
-[![Build status](https://ci.appveyor.com/api/projects/status/k9a3gooa9hnxaehe/branch/main?svg=true)](https://ci.appveyor.com/project/anna-yeddi/ajs-containers/branch/main)
+[![Build status](https://ci.appveyor.com/api/projects/status/1uxv5gt3taw4r6dj/branch/main?svg=true)](https://ci.appveyor.com/project/anna-yeddi/ajs-maps/branch/main)
